@@ -4,8 +4,7 @@ defmodule Day2 do
     case File.read(filename) do
       {:ok, content} ->
 
-        lines = String.split(content, "\n")
-        lines_numbers = Enum.map(lines, fn line ->
+        lines_numbers = String.split(content, "\n") |> Enum.map( fn line ->
           Enum.map(String.split(line, " "), fn x -> String.to_integer(x) end)
         end)
         
@@ -28,14 +27,11 @@ defmodule Day2 do
     case File.read(filename) do
       {:ok, content} ->
 
-        lines = String.split(content, "\n")
-        lines_numbers = Enum.map(lines, fn line ->
+        lines_numbers = String.split(content, "\n") |> Enum.map( fn line ->
           Enum.map(String.split(line, " "), fn x -> String.to_integer(x) end)
         end)
         
-
         get_remove_size = fn line ->
-
           # for each number in line from 0 to n-2 append a list of k, k+1 and k+2
           three_nums = Enum.map(0..(length(line)-3), fn i -> {Enum.at(line, i), Enum.at(line, i+1), Enum.at(line, i+2)} end)
 
@@ -88,10 +84,10 @@ defmodule Day2 do
   end
 end
 
-#part1
-Day2.part1("test.txt")
-Day2.part1("input.txt")
+#test
+# Day2.part1("test.txt")
+# Day2.part2("test.txt")
 
 #solve
-Day2.part2("test.txt")
+Day2.part1("input.txt")
 Day2.part2("input.txt")

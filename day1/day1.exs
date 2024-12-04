@@ -53,9 +53,9 @@ defmodule Day1 do
 end
 
 #tests
-Day2.part1("test.txt")
-Day2.part2("test.txt")
+# Day1.part1("test.txt")
+# Day1.part2("test.txt")
 
 #solve
-Day2.part1("input.txt")
-Day2.part2("input.txt")
+Day1.part1("input.txt")
+Day1.part2("input.txt")
