@@ -10,18 +10,16 @@ defmodule Day1 do
             [left, right | _] -> {String.to_integer(left), String.to_integer(right)}
           end
         end) |> Enum.unzip()
-        # IO.inspect(numbers_left)
-        # IO.inspect(numbers_right)
 
         sorted_left = Enum.sort(numbers_left)
-        sorted_right = Enum.sort(numbers_right)
-        # IO.inspect(sorted_left)
-        # IO.inspect(sorted_right)
+        sorted_right = Enum.sort(numbers_right)        
+
         res = Enum.zip(sorted_left, sorted_right) |> Enum.map(fn {left, right} -> abs(left - right) end) |> Enum.sum
         IO.puts("Result part1: #{res}")
 
       {:error, reason} ->
         IO.puts("Failed to read file: #{reason}")
+    
     end
   end
 
@@ -34,7 +32,7 @@ defmodule Day1 do
           case String.split(line, "   ") do
             [left, right | _] -> {String.to_integer(left), String.to_integer(right)}
           end
-        end) |> Enum.unzip()
+        end) |> Enum.unzip()        
 
         numbers_right_frequency = Enum.frequencies(numbers_right)
         # occurrences of number_left elements in numbers_right
